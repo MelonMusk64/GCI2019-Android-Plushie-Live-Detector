@@ -16,9 +16,9 @@ class BndBox extends StatelessWidget {
     List<Widget> _renderStrings() {
       double offset = -10;
       return results.map((re) {
-        offset = offset + 14;
+        offset = offset + 20;
         return Positioned(
-          left: 10,
+          left: screenW / 2 - 100,
           top: offset,
           width: screenW,
           height: screenH,
@@ -26,7 +26,7 @@ class BndBox extends StatelessWidget {
             "${re["label"]} ${(re["confidence"] * 100).toStringAsFixed(0)}%",
             style: TextStyle(
               color: Color.fromRGBO(37, 213, 253, 1.0),
-              fontSize: 24.0,
+              fontSize: 20.0,
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -18,11 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Android Plushie Detection',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      home: HomePage(cameras),
-    );
+        title: 'Android Plushie Detection',
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text("Android Plushie detector"),
+            backgroundColor: Colors.green,
+          ),
+          body: HomePage(cameras),
+        ));
   }
 }
