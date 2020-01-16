@@ -28,10 +28,13 @@ class _HomePageState extends State<HomePage> {
 
   loadModel() async {
     String res;
-    res = await Tflite.loadModel(
-        model: "assets/android_plushie.tflite",
-        labels: "assets/android_plushie.txt");
-
+    switch (_model) {
+      case plushie:
+        res = await Tflite.loadModel(
+            model: "assets/android_plushie.tflite",
+            labels: "assets/android_plushie.txt");
+        break;
+    }
     print(res);
   }
 
@@ -54,7 +57,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
+      body: _model == ""
+          ? Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  RaisedButton(
+                    child: const Text(plushie),
+                    onPressed: () => onSelect(plushie),
+                  ),
+                ],
+              ),
+            )
+          : Stack(
               children: [
                 Camera(
                   widget.cameras,

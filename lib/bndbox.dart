@@ -33,7 +33,8 @@ class BndBox extends StatelessWidget {
         );
       }).toList();
     }
-
-    return Stack(children: _renderStrings());
+    return Stack(
+      children: _renderStrings(),
+    );
   }
 }

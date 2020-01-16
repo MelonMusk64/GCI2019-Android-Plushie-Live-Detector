@@ -3,7 +3,7 @@ import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:math' as math;
 
-const String plushie = "Android Plushie";
+const String plushie = "Start Detecting Plushies";
 
 typedef void Callback(List<dynamic> list, int h, int w);
 
